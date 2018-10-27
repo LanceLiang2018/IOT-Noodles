@@ -1,0 +1,30 @@
+<head>
+    <title>Noodles - A Free IOT Platform</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h2>用户信息</h2>
+<hr>
+姓名：{{user.name}}<br>
+头像：<img src="{{user.img}}"><br>
+用户UID：{{user.uid}}<br>
+<a href="/logout">注销登陆</a><br>
+<hr>
+<h2>用户设备管理</h2>
+<a href="/add_driver">添加设备</a><br>
+<a href="/del_driver">删除设备</a><br>
+<a href="/get_token">获取鉴权</a><br>
+{% for driver in drivers %}
+<dir>
+    <dir>
+        <span style="font-size: 32px; ">{{driver.name}}</span>
+        <br>
+        <li>设备id：{{driver.id}}</li>
+        <li>设备类型：{{driver.type}}</li>
+        <li>设备ip：{{driver.ip}}</li>
+        <li>设备上次活动时间：{{driver.last_beat}}</li>
+    </dir>
+</dir>
+{% endfor %}
+<p>{{text}}</p>
+</body>

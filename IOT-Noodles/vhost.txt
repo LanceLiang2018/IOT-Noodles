@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+ServerName lanceliang2018.xyz
+ServerAlias iot.lanceliang2018.xyz
+WSGIScriptAlias / /data/www/iot/iot.wsgi
+<Directory /data/www/iot>
+    <Files iot.wsgi>
+        Require all granted
+    </Files>
+</Directory>
+</VirtualHost>
